@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        h2 {text-align:center;}
+        .center{
+        margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+       }
+        </style>
+        <script>
+            function validateform(){  
+var name=document.myform.name.value;  
+var num=document.myform.num.value;
+var  acc=document.myform.acc.value;
+var nb=document.myform.nb.value;
+var ifsc = document.myform.ifsc.value;
+  
+
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(num.length<10||num.length>10){  
+  alert("Enter correct phone number");  
+  return false;  
+  }  
+  else  if (nb==null || nb==""){  
+  alert("Enter your bank name");  
+  return false;  
+
+}  
+  else if(acc.length<10 || acc.length>10){  
+  alert("Invalid account number");  
+  return false;  
+  } 
+  else if (ifsc == null || ifsc == "") {
+    alert("IFSC code can't be blank");
+    return false;
+  } else if (ifsc.length != 11) {
+    alert("Invalid IFSC code");
+    return false;
+  }
+}
+
+        </script>
+    </head>
+    <body style="background-color: cadetblue;">
+        <h2>PAYMENT DETAILS FORM</h2>
+
+        <form name="myform" method="post"  onsubmit="return validateform()" >
+          <div class="center">
+            
+        <b>Name:</b> <input type="text" name="name"><br><br>
+       <b>Phone Number:</b> <input type="number" name="num"><br><br>
+       <b>Name of the Bank:</b> <input type="text" name="nb"><br><br>
+       <b>Name of the Branch:</b> <input type="text" name="nbr"><br><br>
+       <b>Account Number:</b> <input type="number" name="acc"><br><br>
+       <b>IFSC Code:</b><input type="text" name="ifsc"><br><br>
+       <input type="submit" value="Submit">
+      </div>
+    </form>
+        
+
+
+    </body>
+</html>
